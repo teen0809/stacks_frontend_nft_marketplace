@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Bold.woff2') format('woff2'),
+      url('./fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2'),
+      url('./fonts/Montserrat-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Regular.woff2') format('woff2'),
+      url('./fonts/Montserrat-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Syne Mono';
+  src: url('./fonts/SyneMono-Regular.ttf') format('truetype');
+}
+
+
+@tailwind base;
+@tailwind components;
+
+
+body {
+  background-color: #0f0f0f;
+}
+
+:root {
+  --reddish:#f06;
+  --greenish:#0fa;
+  --purplish:rgb(149, 0, 255);
+  --half-purplish:rgba(149, 0, 255, 0.65);
+}
+
+.neonText {
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 42px var(--purplish),
+      0 0 82px var(--purplish);
+}
+
+.neonBox {
+  box-shadow:
+      0 0 7px rgba(255, 255, 255, 0.65),
+      0 0 10px rgba(255, 255, 255, 0.65),
+      0 0 42px var(--half-purplish),
+      0 0 82px var(--half-purplish);
+}
+
+
+@-webkit-keyframes  glow {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow:
+      0 0 7px rgba(255, 255, 255, 0.65),
+      0 0 10px rgba(255, 255, 255, 0.65),
+      0 0 42px var(--half-purplish),
+      0 0 82px var(--half-purplish);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes  glow {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow:
+      0 0 7px rgba(255, 255, 255, 0.65),
+      0 0 10px rgba(255, 255, 255, 0.65),
+      0 0 42px var(--half-purplish),
+      0 0 82px var(--half-purplish);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+.eligible {
+  -webkit-animation: glow ease-in-out 8s infinite;
+  animation: glow ease-in-out 8s infinite;
+}
+
+@tailwind utilities;
